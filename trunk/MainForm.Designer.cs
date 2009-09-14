@@ -28,12 +28,138 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.SourceButton = new System.Windows.Forms.Button();
+            this.TargetButton = new System.Windows.Forms.Button();
+            this.GoButton = new System.Windows.Forms.Button();
+            this.ErrorListBox = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "招商证券"});
+            this.comboBox1.Location = new System.Drawing.Point(59, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(59, 39);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(276, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(59, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(276, 20);
+            this.textBox2.TabIndex = 2;
+            // 
+            // SourceButton
+            // 
+            this.SourceButton.Location = new System.Drawing.Point(341, 39);
+            this.SourceButton.Name = "SourceButton";
+            this.SourceButton.Size = new System.Drawing.Size(32, 23);
+            this.SourceButton.TabIndex = 3;
+            this.SourceButton.Text = "...";
+            this.SourceButton.UseVisualStyleBackColor = true;
+            // 
+            // TargetButton
+            // 
+            this.TargetButton.Location = new System.Drawing.Point(341, 63);
+            this.TargetButton.Name = "TargetButton";
+            this.TargetButton.Size = new System.Drawing.Size(32, 23);
+            this.TargetButton.TabIndex = 4;
+            this.TargetButton.Text = "...";
+            this.TargetButton.UseVisualStyleBackColor = true;
+            // 
+            // GoButton
+            // 
+            this.GoButton.Location = new System.Drawing.Point(186, 10);
+            this.GoButton.Name = "GoButton";
+            this.GoButton.Size = new System.Drawing.Size(75, 23);
+            this.GoButton.TabIndex = 5;
+            this.GoButton.Text = "Go";
+            this.GoButton.UseVisualStyleBackColor = true;
+            // 
+            // ErrorListBox
+            // 
+            this.ErrorListBox.FormattingEnabled = true;
+            this.ErrorListBox.Location = new System.Drawing.Point(15, 89);
+            this.ErrorListBox.Name = "ErrorListBox";
+            this.ErrorListBox.Size = new System.Drawing.Size(358, 160);
+            this.ErrorListBox.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "源类型";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 42);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "源文件";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 68);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Gf文件";
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(386, 261);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ErrorListBox);
+            this.Controls.Add(this.GoButton);
+            this.Controls.Add(this.TargetButton);
+            this.Controls.Add(this.SourceButton);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Name = "MainForm";
+            this.Text = "2Gf";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button SourceButton;
+        private System.Windows.Forms.Button TargetButton;
+        private System.Windows.Forms.Button GoButton;
+        private System.Windows.Forms.ListBox ErrorListBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
