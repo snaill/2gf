@@ -131,10 +131,15 @@ namespace Jeebook._2Gf
 
     class ZszqTxt
     {
-        void toGfCsv( string txtFile, string csvFile)
+        public System.Collections.ArrayList Records
         {
-            GfCsv csv = new GfCsv();
-            System.IO.StreamReader sr = new System.IO.StreamReader(txtFile);
+            get ;
+            set ;
+        }
+
+        public void FromTxt(string fn)
+        {
+            System.IO.StreamReader sr = new System.IO.StreamReader(fn);
             sr.ReadLine();  // ------------
             sr.ReadLine();  // Space
 
@@ -147,9 +152,9 @@ namespace Jeebook._2Gf
             while (strLine != "")
             {
                 ZszqRecord rec = ZszqRecord.Parse(strLine, nDiv);
+                Records.Add(rec);
                 strLine = sr.ReadLine();
             }
-
         }
 
         int[] GetDiv(string str)
