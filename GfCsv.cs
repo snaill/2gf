@@ -27,7 +27,7 @@ namespace Jeebook._2Gf
         // 日期
         public DateTime Date;
         // 股数
-        public int Shares;
+        public double Shares;
         // 价格
         public double Price;
         // 现金价值
@@ -42,7 +42,7 @@ namespace Jeebook._2Gf
     {
         System.Collections.ArrayList arRecords = new System.Collections.ArrayList();
 
-        public void Add(string Symbol, string Name, GfType Type, DateTime Date, int Shares, double Price, double Commission, string Notes)
+        public void Add(string Symbol, string Name, GfType Type, DateTime Date, double Shares, double Price, double Commission, string Notes)
         {
             GfRecord rec = new GfRecord();
             rec.Symbol = Symbol;

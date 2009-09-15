@@ -33,7 +33,7 @@ namespace Jeebook._2Gf
         // 成交价格
         public double CJJG;
         // 成交数量 
-        public int CJSL;
+        public double CJSL;
         // 发生金额
         public double FSJE;
         // 资金余额
@@ -82,13 +82,34 @@ namespace Jeebook._2Gf
             return ZszqOption.Unknown;
         }
 
-        public static ZszqRecord Parse(string str, int[] div )
+        public static ZszqRecord Parse(string str )
         {
             //
             System.Collections.ArrayList arr = new System.Collections.ArrayList();
-            for ( int i = 0; i < div.Length - 1; i ++ )
-                arr.Add( str.Substring( div[i], div[i+1] - div[i] ).TrimEnd(' '));
-            arr.Add( str.Substring( div[div.Length - 1] ).TrimEnd(' ') );
+            string sTemp = "";
+            int nSpace = 0;
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (str[i] != ' ')
+                    sTemp += str[i];
+                else
+                {
+                    nSpace++;
+                    if (sTemp.Length > 0)
+                    {
+                        if (sTemp == "---" && arr.Count < 14)
+                            sTemp = "0.00";
+                        arr.Add(sTemp);
+                        sTemp = "";
+                        nSpace = 0;
+                    }
+                    if (nSpace >= 18)
+                    {
+                        arr.Add("");
+                        nSpace = 0;
+                    }
+                }
+            }
 
             // 
             ZszqRecord rec = new ZszqRecord();
@@ -97,11 +118,14 @@ namespace Jeebook._2Gf
             // 证券名称
             rec.ZQMC = arr[1].ToString(); 
             // 成交日期
-            rec.CJRQ = DateTime.Parse( arr[2].ToString().Substring( 0, 8 ) );
+            int year = int.Parse( arr[2].ToString().Substring( 0, 4 ) );
+            int month = int.Parse( arr[2].ToString().Substring( 4, 2 ) );
+            int day = int.Parse( arr[2].ToString().Substring( 6, 2 ) );
+            rec.CJRQ = new DateTime( year, month, day );
             // 成交价格
             rec.CJJG = double.Parse(arr[3].ToString());
             // 成交数量 
-            rec.CJSL = int.Parse(arr[4].ToString());
+            rec.CJSL = double.Parse(arr[4].ToString());
             // 发生金额
             rec.FSJE = double.Parse(arr[5].ToString());
             // 资金余额
@@ -131,46 +155,24 @@ namespace Jeebook._2Gf
 
     class ZszqTxt
     {
-        public System.Collections.ArrayList Records
-        {
-            get ;
-            set ;
-        }
+        public System.Collections.ArrayList Records = new System.Collections.ArrayList();
 
         public void FromTxt(string fn)
         {
-            System.IO.StreamReader sr = new System.IO.StreamReader(fn);
+            System.IO.StreamReader sr = new System.IO.StreamReader(fn, System.Text.Encoding.Default);
             sr.ReadLine();  // ------------
             sr.ReadLine();  // Space
-
             // 币种, 证券名称,成交日期,成交价格,成交数量,发生金额,资金余额,合同编号,业务名称,手续费,印花税,过户费,结算费,证券代码,股东代码
-            string strLine = sr.ReadLine();
-            int[] nDiv = GetDiv(strLine);
+            sr.ReadLine();
 
             //
-            strLine = sr.ReadLine();
-            while (strLine != "")
+            string strLine = sr.ReadLine();
+            while (strLine != null && strLine != "")
             {
-                ZszqRecord rec = ZszqRecord.Parse(strLine, nDiv);
+                ZszqRecord rec = ZszqRecord.Parse(strLine);
                 Records.Add(rec);
                 strLine = sr.ReadLine();
             }
-        }
-
-        int[] GetDiv(string str)
-        {
-            int[] nDiv = new int[15];
-            bool bSpace = true;
-            for (int i = 0, idx = 0; i < str.Length; i++)
-            {
-                if (str[i] != ' ' && bSpace)
-                {
-                    nDiv[idx++] = i;
-                    bSpace = false;
-                }
-            }
-
-            return nDiv;
         }
     }
 }
