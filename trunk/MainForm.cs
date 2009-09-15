@@ -13,6 +13,38 @@ namespace Jeebook._2Gf
         public MainForm()
         {
             InitializeComponent();
+            SourceTextBox.Text = @"D:\Shareware\2gf\example\wt.txt";
+            TargetTextBox.Text = @"D:\Shareware\2gf\example\data.csv";
+        }
+
+        void ErrorRecordEventHandler(Object sender, string data)
+        {
+            ErrorListBox.Items.Add(data);
+        }
+
+        private void GoButton_Click(object sender, EventArgs e)
+        {
+            ErrorListBox.Items.Clear();
+
+            ZszqTxt2GfCsv converter = new ZszqTxt2GfCsv();
+            converter.ErrorRecordEvent += ErrorRecordEventHandler;
+            converter.Convert(SourceTextBox.Text, TargetTextBox.Text);
+        }
+
+        private void SourceButton_Click(object sender, EventArgs e)
+        {
+            if (OpenFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            SourceTextBox.Text = OpenFileDialog.FileName;
+        }
+
+        private void TargetButton_Click(object sender, EventArgs e)
+        {
+            if (SaveFileDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            TargetTextBox.Text = SaveFileDialog.FileName;
         }
     }
 }
