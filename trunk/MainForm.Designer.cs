@@ -48,30 +48,30 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "招商证券"});
-            this.comboBox1.Location = new System.Drawing.Point(59, 12);
+            this.comboBox1.Location = new System.Drawing.Point(59, 11);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 0;
             // 
             // SourceTextBox
             // 
-            this.SourceTextBox.Location = new System.Drawing.Point(59, 39);
+            this.SourceTextBox.Location = new System.Drawing.Point(59, 36);
             this.SourceTextBox.Name = "SourceTextBox";
-            this.SourceTextBox.Size = new System.Drawing.Size(276, 20);
+            this.SourceTextBox.Size = new System.Drawing.Size(276, 21);
             this.SourceTextBox.TabIndex = 1;
             // 
             // TargetTextBox
             // 
-            this.TargetTextBox.Location = new System.Drawing.Point(59, 65);
+            this.TargetTextBox.Location = new System.Drawing.Point(59, 60);
             this.TargetTextBox.Name = "TargetTextBox";
-            this.TargetTextBox.Size = new System.Drawing.Size(276, 20);
+            this.TargetTextBox.Size = new System.Drawing.Size(276, 21);
             this.TargetTextBox.TabIndex = 2;
             // 
             // SourceButton
             // 
-            this.SourceButton.Location = new System.Drawing.Point(341, 39);
+            this.SourceButton.Location = new System.Drawing.Point(341, 36);
             this.SourceButton.Name = "SourceButton";
-            this.SourceButton.Size = new System.Drawing.Size(32, 23);
+            this.SourceButton.Size = new System.Drawing.Size(32, 21);
             this.SourceButton.TabIndex = 3;
             this.SourceButton.Text = "...";
             this.SourceButton.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             // TargetButton
             // 
-            this.TargetButton.Location = new System.Drawing.Point(341, 63);
+            this.TargetButton.Location = new System.Drawing.Point(341, 58);
             this.TargetButton.Name = "TargetButton";
-            this.TargetButton.Size = new System.Drawing.Size(32, 23);
+            this.TargetButton.Size = new System.Drawing.Size(32, 21);
             this.TargetButton.TabIndex = 4;
             this.TargetButton.Text = "...";
             this.TargetButton.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // GoButton
             // 
-            this.GoButton.Location = new System.Drawing.Point(186, 10);
+            this.GoButton.Location = new System.Drawing.Point(186, 9);
             this.GoButton.Name = "GoButton";
-            this.GoButton.Size = new System.Drawing.Size(75, 23);
+            this.GoButton.Size = new System.Drawing.Size(75, 21);
             this.GoButton.TabIndex = 5;
             this.GoButton.Text = "Go";
             this.GoButton.UseVisualStyleBackColor = true;
@@ -99,44 +99,47 @@
             // 
             // ErrorListBox
             // 
+            this.ErrorListBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ErrorListBox.FormattingEnabled = true;
-            this.ErrorListBox.Location = new System.Drawing.Point(15, 89);
+            this.ErrorListBox.ItemHeight = 12;
+            this.ErrorListBox.Location = new System.Drawing.Point(0, 93);
             this.ErrorListBox.Name = "ErrorListBox";
-            this.ErrorListBox.Size = new System.Drawing.Size(358, 160);
+            this.ErrorListBox.ScrollAlwaysVisible = true;
+            this.ErrorListBox.Size = new System.Drawing.Size(386, 148);
             this.ErrorListBox.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Location = new System.Drawing.Point(10, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 7;
             this.label1.Text = "源类型";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 42);
+            this.label2.Location = new System.Drawing.Point(10, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 8;
             this.label2.Text = "源文件";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 68);
+            this.label3.Location = new System.Drawing.Point(12, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 9;
             this.label3.Text = "Gf文件";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(386, 261);
+            this.ClientSize = new System.Drawing.Size(386, 241);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
