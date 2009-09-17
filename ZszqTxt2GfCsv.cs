@@ -18,19 +18,21 @@ namespace Jeebook._2Gf
             for (int i = 0; i < txt.Records.Count; i++)
             {
                 ZszqRecord rec = (ZszqRecord)txt.Records[i];
+                string ZQDM = rec.GDDM[0] == 'A' ? rec.ZQDM : "SHE:" + rec.ZQDM;
+
                 switch (rec.YWMC)
                 {
                     case ZszqOption.ZQMR:
-                        csv.Add(rec.ZQDM, rec.ZQMC, GfType.Buy, rec.CJRQ, rec.CJSL, rec.CJJG, rec.SXF + rec.YHS + rec.GHF + rec.JSF, "");
+                        csv.Add(ZQDM, rec.ZQMC, GfType.Buy, rec.CJRQ, rec.CJSL, rec.CJJG, rec.SXF + rec.YHS + rec.GHF + rec.JSF, "");
                         break;
                     case ZszqOption.ZQMC:
-                        csv.Add(rec.ZQDM, rec.ZQMC, GfType.Sell, rec.CJRQ, rec.CJSL, rec.CJJG, rec.SXF + rec.YHS + rec.GHF + rec.JSF, "");
+                        csv.Add(ZQDM, rec.ZQMC, GfType.Sell, rec.CJRQ, rec.CJSL, rec.CJJG, rec.SXF + rec.YHS + rec.GHF + rec.JSF, "");
                         break;
                     case ZszqOption.YHZC:
                     case ZszqOption.GXRZ:
                     case ZszqOption.PLLXGB:
-                        csv.Add(GfType.DepositCash, rec.CJRQ, rec.FSJE, "");
-                        break;
+                        //csv.Add(GfType.DepositCash, rec.CJRQ, rec.FSJE, "");
+                        //break;
                     case ZszqOption.HGRZ:
                     default:
                         if (ErrorRecordEvent != null)
