@@ -13,8 +13,8 @@ namespace Jeebook._2Gf
         public MainForm()
         {
             InitializeComponent();
-            SourceTextBox.Text = @"D:\Shareware\2gf\example\wt.txt";
-            TargetTextBox.Text = @"D:\Shareware\2gf\example\data.csv";
+            SourceTextBox.Text = @"D:\wt.txt";
+            TargetTextBox.Text = @"D:\data.csv";
         }
 
         void ErrorRecordEventHandler(Object sender, string data)
