@@ -89,7 +89,8 @@ namespace Jeebook._2Gf
                     case GfType.WithdrawCash: strType = "Withdraw Cash"; break;
                 }
                 sw.WriteLine("{0},{1},{2},{3},{4},{5},{6},{7},{8}",
-                    rec.Symbol, rec.Name, strType, rec.Date, rec.Shares, rec.Price, rec.CashValue, rec.Commission, rec.Notes);
+                    rec.Symbol, rec.Name, strType, rec.Date, rec.Shares.ToString("f4"), rec.Price.ToString("f2"), 
+                    rec.CashValue.ToString("f4"), rec.Commission.ToString("f4"), rec.Notes);
             }
             sw.Close();
         }
